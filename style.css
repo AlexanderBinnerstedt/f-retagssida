@@ -23,6 +23,12 @@ header {
   font-weight: 100;
 }
 
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 11px;
+  }
+}
+
 @keyframes slideIn {
   from {
     left: -300%;
@@ -122,7 +128,7 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 400px) {
   .text {
     font-size: 11px;
   }
@@ -158,9 +164,6 @@ a:hover {
 }
 
 .atleter {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   display: grid;
   position: relative;
   grid-template-columns: 31.5% 31.5% 31.5%;
@@ -171,6 +174,38 @@ a:hover {
   transition: transform 0.2s;
 }
 
+.atleterBild{
+  position: relative;
+}
+
+.atleterText{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #4e4e50;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+}
+
+.atleterBild img{
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  max-height: 750px;
+}
+
+@media only screen and (max-width: 400px) {
+  .atleterBild {
+    font-size: 11px;
+  }
+}
+
 .atleter :hover {
   transform: scale(1.01);
 }
@@ -178,6 +213,10 @@ a:hover {
 .atleter img{
   width: 100%;
   max-width: 350px;
+  border: #4e4e50;
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 5px;
 }
 
 .atleter p{
